@@ -1,0 +1,10 @@
+<launch>
+    <!-- Run filter -->
+    <node pkg="my_pcl_tutorial" type="filter" name="filter_node" output="screen" args="input_cloud.pcd output_cloud.pcd"/>
+
+    <!-- Run Euclidean clustering -->
+    <node pkg="my_pcl_tutorial" type="Euclidean_Clustering" name="euclidean_clustering_node" output="screen" args="output_cloud.pcd segmentated.pcd"/>
+
+    <!-- Run curve fitting -->
+    <node pkg="my_pcl_tutorial" type="curve_fitting" name="curve_fitting_node" output="screen" args="segmentated.pcd fitted_cloud.pcd"/>
+</launch>

@@ -1,0 +1,11 @@
+
+<launch>
+<node pkg="my_pcl_tutorial" type="passthrough" name="passthrough">
+	<remap from="cloud_input" to="kinect2/qhd/points" />
+</node>
+ <node pkg="my_pcl_tutorial" type="passthroughx" name="PassThroughx" respawn="false"/>
+ <node pkg="my_pcl_tutorial" type="voxel_grid" name="Voxel_Grid" respawn="false"/>
+ <node pkg="my_pcl_tutorial" type="radius_outlier_removal" name="Radius_OutlierRemoval" respawn="false"/>
+ <node pkg="rviz" type="rviz" name="Rviz" args="-d /home/g/kinect.rviz"/>
+ <!-- node pkg="rviz" type="rviz" name="Rviz" -->
+</launch>
